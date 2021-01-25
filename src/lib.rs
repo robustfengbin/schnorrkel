@@ -230,7 +230,6 @@ fn rand_hack() -> impl RngCore+CryptoRng {
 
 #[cfg(all(feature = "getrandom", not(feature = "rand")))]
 fn rand_hack() -> impl RngCore+CryptoRng {
-    println!("hello,robust");
     ::rand_core::OsRng
 }
 
