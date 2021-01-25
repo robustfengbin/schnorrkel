@@ -223,13 +223,14 @@ extern crate alloc;
 
 use rand_core::{RngCore,CryptoRng};
 
-#[cfg(all(feature = "getrandom", feature = "rand"))] 
+#[cfg(all(feature = "getrandom", feature = "rand"))]
 fn rand_hack() -> impl RngCore+CryptoRng {
     ::rand::thread_rng()
 }
 
-#[cfg(all(feature = "getrandom", not(feature = "rand")))] 
+#[cfg(all(feature = "getrandom", not(feature = "rand")))]
 fn rand_hack() -> impl RngCore+CryptoRng {
+    println!("hello,robust");
     ::rand_core::OsRng
 }
 
