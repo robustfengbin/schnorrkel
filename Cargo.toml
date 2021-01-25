@@ -102,6 +102,7 @@ harness = false
 [features]
 default = ["std", "u64_backend", "rand", "getrandom"] # "chacha"
 preaudit_deprecated = []
+phala_getrandom = ["getrandom"]
 nightly = ["curve25519-dalek/nightly", "rand/nightly"] # "zeroize/nightly"
 alloc = ["curve25519-dalek/alloc", "rand_core/alloc"]
 chacha = ["rand_chacha"]
